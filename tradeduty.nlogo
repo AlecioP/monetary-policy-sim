@@ -1,115 +1,18 @@
-globals [
-  LISBONA MADRID PARIGI DUBLINO ROMA VALLETTA BRUXELLES AMSTERDAM LUSSEMBURGO LUBIANA ZAGABRIA ATENE NICOSIA SOFIA BUCAREST BUDAPEST BRATISLAVA VIENNA BERLINO COPENAGHEN VARSAVIA VILNIUS RIGA TALLINN STOCCOLMA HELSINKI PRAGA
-]
+turtles-own [ dna gdp ]
+links-own [ duty ]
 
 to setup
-  clear-all
-
-  set LISBONA        0  ;; PORTOGALLO
-  set MADRID         1  ;; SPAGNA
-  set PARIGI         2  ;; FRANCIA
-  set DUBLINO        3  ;; IRLANDA
-  set ROMA           4  ;; ITALIA
-  set VALLETTA       5  ;; MALTA
-  set BRUXELLES      6  ;; BELGIO
-  set AMSTERDAM      7  ;; PAESI BASSI
-  set LUSSEMBURGO    8  ;; LUSSEMBURGO
-  set LUBIANA        9  ;; SLOVENIA
-  set ZAGABRIA       10 ;; CROAZIA
-  set ATENE          11 ;; GRECIA
-  set NICOSIA        12 ;; CIPRO
-  set SOFIA          13 ;; BULGARIA
-  set BUCAREST       14 ;; ROMANIA
-  set BUDAPEST       15 ;; UNGHERIA
-  set BRATISLAVA     16 ;; SLOVACCHIA
-  set VIENNA         17 ;; AUSTRIA
-  set BERLINO        18 ;; GERMANIA
-  set COPENAGHEN     19 ;; DANIMARCA
-  set VARSAVIA       20 ;; POLONIA
-  set VILNIUS        21 ;; LITUANIA
-  set RIGA           22 ;; LETTONIA
-  set TALLINN        23 ;; ESTONIA
-  set STOCCOLMA      24 ;; SVEZIA
-  set HELSINKI       25 ;; FINLANDIA
-  set PRAGA          26 ;; CECHIA
-
-  import-drawing "eu.png"
-
-  create-turtles 27 [
-    set color red
-    set shape "house"
-    set label-color black
-  ]
-
-  ask turtle LISBONA [ set xcor -29.7 set ycor -20.5 set label "LISBONA"]
-
-  ask turtle MADRID [ set xcor -21.5 set ycor -18.5 set label "MADRID"]
-
-  ask turtle VALLETTA [ set xcor 2.5 set ycor -31.5 set label "VALLETTA"]
-
-  ask turtle PARIGI [ set xcor -12.7 set ycor -7.5 set label "PARIGI"]
-
-  ask turtle DUBLINO [ set xcor -18.7 set ycor 3.5 set label "DUBLINO"]
-
-  ask turtle ROMA [ set xcor 0 set ycor -19.5 set label "ROMA"]
-
-  ask turtle BRUXELLES [ set xcor -8.5 set ycor -3.5 set label "BRUXELLES"]
-
-  ask turtle AMSTERDAM [ set xcor -7.2 set ycor -0.9 set label "AMSTERDAM"]
-
-  ask turtle LUSSEMBURGO [ set xcor -6.5 set ycor -5 set label "LUSSEMBURGO"]
-
-  ask turtle LUBIANA [ set xcor 3 set ycor -12.5 set label "LUBIANA"]
-
-  ask turtle ZAGABRIA [ set xcor 4.5 set ycor -12.7 set label "ZAGABRIA"]
-
-  ask turtle COPENAGHEN [ set xcor -1 set ycor 3.7 set label "COPENAGHEN"]
-
-  ask turtle BERLINO [ set xcor 0 set ycor -2 set label "BERLINO"]
-
-  ask turtle NICOSIA [ set xcor 30 set ycor -28 set label "NICOSIA"]
-
-  ask turtle ATENE [ set xcor 13.7 set ycor -26.5 set label "ATENE"]
-
-  ask turtle SOFIA [ set xcor 14.2 set ycor -17.7 set label "SOFIA"]
-
-  ask turtle BUCAREST [ set xcor 16.2 set ycor -14.2 set label "BUCAREST"]
-
-  ask turtle VIENNA [ set xcor 4.5 set ycor -9.7 set label "VIENNA"]
-
-  ask turtle BRATISLAVA [ set xcor 5.7 set ycor -8.5 set label "BRATISLAVA"]
-
-  ask turtle BUDAPEST [ set xcor 7.9 set ycor -9.7 set label "BUDAPEST"]
-
-  ask turtle VARSAVIA [ set xcor 9.2 set ycor -3 set label "VARSAVIA"]
-
-  ask turtle PRAGA [ set xcor 2.7 set ycor -5.5 set label "PRAGA"]
-
-  ask turtle VILNIUS [ set xcor 13 set ycor 3.7 set label "VILNIUS"]
-
-  ask turtle RIGA [ set xcor 11.7 set ycor 7.2 set label "RIGA"]
-
-  ask turtle TALLINN [ set xcor 11.7 set ycor 11.2 set label "TALLINN"]
-
-  ask turtle HELSINKI [ set xcor 11 set ycor 12.5 set label "HELSINKI"]
-
-  ask turtle STOCCOLMA [ set xcor 5 set ycor 10 set label "STOCCOLMA"]
-
-  ask turtles [ set label "" ]
-end
-
-to sim
-  ask turtles []
+  import-drawing "gdp.png"
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-868
+676
 10
-1649
-792
+1652
+798
 -1
 -1
-11.9
+23.61
 1
 10
 1
@@ -119,10 +22,10 @@ GRAPHICS-WINDOW
 1
 1
 1
--32
-32
--32
-32
+-20
+20
+-16
+16
 0
 0
 1
@@ -130,30 +33,13 @@ ticks
 30.0
 
 BUTTON
-10
-28
-76
-61
+36
+31
+102
+64
 NIL
 setup
 NIL
-1
-T
-OBSERVER
-NIL
-NIL
-NIL
-NIL
-1
-
-BUTTON
-102
-34
-165
-67
-run
-sim
-T
 1
 T
 OBSERVER
